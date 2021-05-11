@@ -18,9 +18,8 @@ public class Pet {
     private LocalDate birthDate;
     private String notes;
 
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "customer_id")
-    private Customer customer;
+    @ManyToOne(targetEntity = Customer.class, fetch = FetchType.LAZY)
+    private Customer owner;
 
     // getters & setters
     public Long getId() {
@@ -63,11 +62,11 @@ public class Pet {
         this.notes = notes;
     }
 
-    public Customer getCustomer() {
-        return customer;
+    public Customer getOwner() {
+        return owner;
     }
 
-    public void setCustomer(Customer customer) {
-        this.customer = customer;
+    public void setOwner(Customer owner) {
+        this.owner = owner;
     }
 }

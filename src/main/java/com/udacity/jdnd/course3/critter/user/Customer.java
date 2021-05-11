@@ -19,7 +19,7 @@ public class Customer {
     private String phoneNumber;
     private String notes;
 
-    @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true, mappedBy = "customer")
+    @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true, mappedBy = "owner")
     private List<Pet> pets;
 
     // getters & setters
