@@ -5,6 +5,8 @@ import com.udacity.jdnd.course3.critter.pet.Pet;
 import org.hibernate.annotations.Nationalized;
 
 import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
 
 @Entity
@@ -20,7 +22,7 @@ public class Customer {
     private String notes;
 
     @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true, mappedBy = "owner")
-    private List<Pet> pets;
+    private List<Pet> pets = new ArrayList<>();
 
     // getters & setters
     public Long getId() {
@@ -62,4 +64,5 @@ public class Customer {
     public void setPets(List<Pet> pets) {
         this.pets = pets;
     }
+
 }
